@@ -23,11 +23,12 @@ var ball = {
 
 function setup(){
   var canvas =  createCanvas(700,600);
+  canvas.parent('canvas');
+  video = createCapture(VIDEO);
 }
 
 
 function draw(){
-
  background(0); 
 
  fill("black");
@@ -161,4 +162,9 @@ function paddleInCanvas(){
   if(mouseY < 0){
     mouseY =0;
   }  
+}
+
+//mycode
+function restart(){
+  
 }

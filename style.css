@@ -18,6 +18,6 @@ h4{
     background-color: aliceblue;
     bottom:0px;
 line-height:2;
-position: sticky;
+position: fixed;
 width: 100%;
 }

@@ -13,8 +13,8 @@ var  playerscore =0;
 var audio1;
 var pcscore =0;
   rightwristY=0;
-poses = "";
-
+  rightwristX=0;
+scorerightwrist=0;
 //ball x and y and speedx speed y and radius
 var ball = {
     x:350/2,
@@ -41,12 +41,22 @@ function modelLoaded(){
 }
 
 function gotPoses(results){
-poses=results;
+  if(results.length>0){
+    console.log(results);
+    rightwristY=results[0].pose.rightWrist.y;
+    rightwristX=results[0].pose.rightWrist.x;
+    scorerightwrist = results[0].pose.keypoints[10].score;
+  }
 }
 function draw(){
  background(0); 
 image(video,0,0,700,600);
-
+if(scorerightwrist>0.2){
+  fill("red");
+  stroke("red");
+  strokeWeight(3);
+  circle(rightwristX,rightwristY,20);
+}
 
  fill("black");
  stroke("black");

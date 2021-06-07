@@ -222,5 +222,7 @@ function paddleInCanvas(){
 
 function restart()
 {
-  
+  pcscore=0;
+  playerscore =0;
+  loop();
 }
